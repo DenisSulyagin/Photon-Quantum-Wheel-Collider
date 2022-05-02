@@ -1,0 +1,84 @@
+﻿struct Wheel
+{
+    FPVector3 dummyLocalPosition;
+
+    EntityRef wheel;
+
+    Transform3D dummy;
+
+    FP radius;
+    FP mass;
+    FP width;
+    bool right;
+
+    [ExcludeFromPrototype]
+    FP forwardSlip;
+
+    [ExcludeFromPrototype]
+    FP sidewaysSlip;
+
+    [ExcludeFromPrototype]
+    FPVector3 totalForce;
+
+    [ExcludeFromPrototype]
+    FPVector3 prevPosition;
+
+    [ExcludeFromPrototype]
+    bool isGrounded;
+
+    FP motorTorque;
+    FP brakeTorque;
+
+    [ExcludeFromPrototype]
+    FP motorInput;
+
+    [ExcludeFromPrototype]
+    FP brakeInput;
+
+    [ExcludeFromPrototype]
+    FP angularVelocity;
+
+    [ExcludeFromPrototype]
+    FP rotationAngle;
+
+    FP suspensionDistance;
+
+    [ExcludeFromPrototype]
+    FP suspensionCompression;
+
+    [ExcludeFromPrototype]
+    FP suspensionCompressionPrev;
+
+    FP suspensionSpring;
+    FP suspensionDamper;
+
+    [ExcludeFromPrototype]
+    FP forceUp;
+
+    [ExcludeFromPrototype]
+    FPVector3 point;
+
+    [ExcludeFromPrototype]
+    FPVector3 hitS;
+}
+
+component PlayerVehicle
+{
+  FP force;
+  FP distance;
+  FPVector3 position;
+
+  FP steerAngle;
+
+  FP maxAngularVelocityWheels;
+  bool tridimensionalWheels;
+  EntityRef chassis;
+
+  array<Wheel>[4] wheels;
+  
+}
+
+﻿input
+{
+    FPVector2 Movement;
+}

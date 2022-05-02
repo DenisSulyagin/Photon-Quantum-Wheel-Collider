@@ -1,0 +1,750 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a366507de6e4aa44aea490bd69adace, type: 3}
+  m_Name: Map1
+  m_EditorClassIdentifier: 
+  Settings:
+    Identifier:
+      Path: Resources/DB/Map1
+      Guid:
+        Value: 1710471675203725834
+    UserAsset:
+      Id:
+        Value: 0
+    Scene: Game
+    ScenePath: Assets/Photon/QuantumDemo/Game/Game.unity
+    SceneGuid: 03bd5ba32b9950244a08f22579187d8b
+    WorldSize: 256
+    BucketsCount: 16
+    BucketsSubdivisions: 8
+    BucketingAxis: 0
+    SortingAxis: 1
+    TriangleMeshCellSize: 4
+    StaticColliders3DTrianglesData:
+      Id:
+        Value: 3586516233696533338
+    StaticColliders3DTrianglesBinaryFile: 
+    GridSizeX: 32
+    GridSizeY: 32
+    GridNodeSize: 4
+    NavMeshLinks: []
+    Regions: []
+    StaticColliders2D: []
+    StaticColliders3D:
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: -211025
+        Z:
+          RawValue: 0
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 3276800
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 3276800
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Ground
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 0
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: -70582
+        Y:
+          RawValue: -199884
+        Z:
+          RawValue: 610926
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 1
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: 222167
+        Y:
+          RawValue: -199884
+        Z:
+          RawValue: 1017118
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube (1)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 2
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: -261947
+        Y:
+          RawValue: -199884
+        Z:
+          RawValue: 530317
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube (2)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 3
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: 30801
+        Y:
+          RawValue: -199884
+        Z:
+          RawValue: 936509
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube (3)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 4
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 19370
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: -62607
+      Position:
+        X:
+          RawValue: 59179
+        Y:
+          RawValue: -189988
+        Z:
+          RawValue: 368443
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube (4)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 5
+        MutableMode: 0
+      MutableMode: 0
+    - Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+        W:
+          RawValue: 65536
+      Position:
+        X:
+          RawValue: 351928
+        Y:
+          RawValue: -199884
+        Z:
+          RawValue: 774635
+      PhysicsMaterial:
+        Id:
+          Value: 1
+      ShapeType: 2
+      SphereRadius:
+        RawValue: 0
+      BoxExtents:
+        X:
+          RawValue: 32768
+        Y:
+          RawValue: 32768
+        Z:
+          RawValue: 32768
+      SmoothSphereMeshCollisions: 0
+      StaticData:
+        Name: Cube (5)
+        Tag: Untagged
+        Layer: 0
+        Asset:
+          Id:
+            Value: 0
+        IsTrigger: 0
+        ColliderIndex: 6
+        MutableMode: 0
+      MutableMode: 0
+    MapEntities: []
+  Prototypes:
+  - PlayerVehicle:
+    - force:
+        RawValue: 6553600
+      distance:
+        RawValue: 6553600
+      position:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+      steerAngle:
+        RawValue: 2621440
+      maxAngularVelocityWheels:
+        RawValue: 65536000
+      tridimensionalWheels:
+        Value: 1
+      chassis:
+        SceneIndexPlusOne: 1
+      wheels:
+      - dummyLocalPosition:
+          X:
+            RawValue: -65536
+          Y:
+            RawValue: -32768
+          Z:
+            RawValue: 131072
+        wheel:
+          SceneIndexPlusOne: 2
+        dummy:
+          Position:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+          Rotation:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+            W:
+              RawValue: 0
+        radius:
+          RawValue: 32768
+        mass:
+          RawValue: 6553
+        width:
+          RawValue: 32768
+        right:
+          Value: 0
+        motorTorque:
+          RawValue: 1310720
+        brakeTorque:
+          RawValue: 6553600
+        suspensionDistance:
+          RawValue: 65536
+        suspensionSpring:
+          RawValue: 655360
+        suspensionDamper:
+          RawValue: 65536
+      - dummyLocalPosition:
+          X:
+            RawValue: 65536
+          Y:
+            RawValue: -32768
+          Z:
+            RawValue: 131072
+        wheel:
+          SceneIndexPlusOne: 3
+        dummy:
+          Position:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+          Rotation:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+            W:
+              RawValue: 0
+        radius:
+          RawValue: 32768
+        mass:
+          RawValue: 6553
+        width:
+          RawValue: 32768
+        right:
+          Value: 1
+        motorTorque:
+          RawValue: 1310720
+        brakeTorque:
+          RawValue: 6553600
+        suspensionDistance:
+          RawValue: 65536
+        suspensionSpring:
+          RawValue: 655360
+        suspensionDamper:
+          RawValue: 65536
+      - dummyLocalPosition:
+          X:
+            RawValue: -65536
+          Y:
+            RawValue: -32768
+          Z:
+            RawValue: -131072
+        wheel:
+          SceneIndexPlusOne: 4
+        dummy:
+          Position:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+          Rotation:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+            W:
+              RawValue: 0
+        radius:
+          RawValue: 32768
+        mass:
+          RawValue: 6553
+        width:
+          RawValue: 32768
+        right:
+          Value: 0
+        motorTorque:
+          RawValue: 1310720
+        brakeTorque:
+          RawValue: 6553600
+        suspensionDistance:
+          RawValue: 65536
+        suspensionSpring:
+          RawValue: 655360
+        suspensionDamper:
+          RawValue: 65536
+      - dummyLocalPosition:
+          X:
+            RawValue: 65536
+          Y:
+            RawValue: -32768
+          Z:
+            RawValue: -131072
+        wheel:
+          SceneIndexPlusOne: 5
+        dummy:
+          Position:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+          Rotation:
+            X:
+              RawValue: 0
+            Y:
+              RawValue: 0
+            Z:
+              RawValue: 0
+            W:
+              RawValue: 0
+        radius:
+          RawValue: 32768
+        mass:
+          RawValue: 6553
+        width:
+          RawValue: 32768
+        right:
+          Value: 1
+        motorTorque:
+          RawValue: 1310720
+        brakeTorque:
+          RawValue: 6553600
+        suspensionDistance:
+          RawValue: 65536
+        suspensionSpring:
+          RawValue: 655360
+        suspensionDamper:
+          RawValue: 65536
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D:
+    - Version: 2
+      Config:
+        Value: 42
+      Mass:
+        RawValue: 65536
+      Drag:
+        RawValue: 32768
+      AngularDrag:
+        RawValue: 32768
+      CenterOfMass:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: -32768
+        Z:
+          RawValue: 0
+      RotationFreeze:
+        Value: 0
+      GravityScale:
+        _hasValue: 0
+        _value:
+          RawValue: 65536
+    PhysicsCollider2D: []
+    PhysicsCollider3D:
+    - ShapeConfig:
+        ShapeType: 2
+        SphereRadius:
+          RawValue: 0
+        PositionOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        BoxExtents:
+          X:
+            RawValue: 55705
+          Y:
+            RawValue: 16384
+          Z:
+            RawValue: 65536
+        RotationOffset:
+          X:
+            RawValue: 0
+          Y:
+            RawValue: 0
+          Z:
+            RawValue: 0
+        UserTag: 0
+        IsPersistent: 1
+        CompoundShapes: []
+        IsSetFromSourceCollider: 0
+      Layer: 0
+      IsTrigger: 0
+      PhysicsMaterial:
+        Id:
+          Value: 0
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D:
+    - CallbackFlags:
+        Value: 0
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 39976
+        Z:
+          RawValue: 367656
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - PlayerVehicle: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: -52428
+        Y:
+          RawValue: -13107
+        Z:
+          RawValue: 420085
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - PlayerVehicle: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: 52428
+        Y:
+          RawValue: -13107
+        Z:
+          RawValue: 420085
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - PlayerVehicle: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: -52428
+        Y:
+          RawValue: -13107
+        Z:
+          RawValue: 315228
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
+  - PlayerVehicle: []
+    CharacterController2D: []
+    CharacterController3D: []
+    NavMeshAvoidanceAgent: []
+    NavMeshAvoidanceObstacle: []
+    NavMeshPathfinder: []
+    NavMeshSteeringAgent: []
+    PhysicsBody2D: []
+    PhysicsBody3D: []
+    PhysicsCollider2D: []
+    PhysicsCollider3D: []
+    PhysicsCallbacks2D: []
+    PhysicsCallbacks3D: []
+    Transform2D: []
+    Transform2DVertical: []
+    Transform3D:
+    - Position:
+        X:
+          RawValue: 52428
+        Y:
+          RawValue: -13107
+        Z:
+          RawValue: 315228
+      Rotation:
+        X:
+          RawValue: 0
+        Y:
+          RawValue: 0
+        Z:
+          RawValue: 0
+    View: []
+    PhysicsJoints2D: []
+    PhysicsJoints3D: []
