@@ -8,26 +8,56 @@ namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.PlayerVehicle))]
   public class PlayerVehicle_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.PlayerVehicle_Prototype> {
-    public Photon.Deterministic.FP force;
-    public Photon.Deterministic.FP distance;
-    public Photon.Deterministic.FPVector3 position;
-    public Photon.Deterministic.FP steerAngle;
-    public Photon.Deterministic.FP maxAngularVelocityWheels;
-    public Quantum.QBoolean tridimensionalWheels;
     [Quantum.LocalReference]
     public global::EntityPrototype chassis;
-    [Quantum.Inspector.ArrayLengthAttribute((Int32)4)]
-    public Wheel_Prototype[] wheels = new Wheel_Prototype[4];
+    public Photon.Deterministic.FP maxAngularVelocityWheels;
+    public Quantum.QBoolean tridimensionalWheels;
+    [Quantum.Inspector.ArrayLengthAttribute((Int32)2)]
+    public Axle_Prototype[] axles = new Axle_Prototype[2];
 
     public sealed override Quantum.Prototypes.PlayerVehicle_Prototype Convert(EntityPrototypeConverter converter) {
       var result = new Quantum.Prototypes.PlayerVehicle_Prototype();
-      result.force = this.force;
-      result.distance = this.distance;
-      result.position = this.position;
-      result.steerAngle = this.steerAngle;
+      converter.Convert(this.chassis, out result.chassis);
       result.maxAngularVelocityWheels = this.maxAngularVelocityWheels;
       result.tridimensionalWheels = this.tridimensionalWheels;
-      converter.Convert(this.chassis, out result.chassis);
+      result.axles = System.Array.ConvertAll(this.axles, x => x.Convert(converter));
+      return result;
+    }
+  }
+  [System.SerializableAttribute()]
+  [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.Axle))]
+  public class Axle_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.Axle_Prototype> {
+    public Photon.Deterministic.FP width;
+    public Photon.Deterministic.FP horizontalPosition;
+    public Photon.Deterministic.FP verticalPosition;
+    public Photon.Deterministic.FP steerAngle;
+    public Photon.Deterministic.FP wheelRadius;
+    public Photon.Deterministic.FP wheelMass;
+    public Photon.Deterministic.FP wheelFriction;
+    public Photon.Deterministic.FP wheelWidth;
+    public Photon.Deterministic.FP motorTorque;
+    public Photon.Deterministic.FP brakeTorque;
+    public Photon.Deterministic.FP suspensionDistance;
+    public Photon.Deterministic.FP suspensionSpring;
+    public Photon.Deterministic.FP suspensionDamper;
+    [Quantum.Inspector.ArrayLengthAttribute((Int32)2)]
+    public Wheel_Prototype[] wheels = new Wheel_Prototype[2];
+
+    public sealed override Quantum.Prototypes.Axle_Prototype Convert(EntityPrototypeConverter converter) {
+      var result = new Quantum.Prototypes.Axle_Prototype();
+      result.width = this.width;
+      result.horizontalPosition = this.horizontalPosition;
+      result.verticalPosition = this.verticalPosition;
+      result.steerAngle = this.steerAngle;
+      result.wheelRadius = this.wheelRadius;
+      result.wheelMass = this.wheelMass;
+      result.wheelFriction = this.wheelFriction;
+      result.wheelWidth = this.wheelWidth;
+      result.motorTorque = this.motorTorque;
+      result.brakeTorque = this.brakeTorque;
+      result.suspensionDistance = this.suspensionDistance;
+      result.suspensionSpring = this.suspensionSpring;
+      result.suspensionDamper = this.suspensionDamper;
       result.wheels = System.Array.ConvertAll(this.wheels, x => x.Convert(converter));
       return result;
     }
@@ -35,34 +65,14 @@ namespace Quantum.Prototypes.Unity {
   [System.SerializableAttribute()]
   [Quantum.Prototypes.PrototypeAttribute(typeof(Quantum.Wheel))]
   public class Wheel_Prototype : Quantum.PrototypeAdapter<Quantum.Prototypes.Wheel_Prototype> {
-    public Photon.Deterministic.FPVector3 dummyLocalPosition;
     [Quantum.LocalReference]
     public global::EntityPrototype wheel;
-    public Quantum.Transform3D dummy;
-    public Photon.Deterministic.FP radius;
-    public Photon.Deterministic.FP mass;
-    public Photon.Deterministic.FP width;
     public Quantum.QBoolean right;
-    public Photon.Deterministic.FP motorTorque;
-    public Photon.Deterministic.FP brakeTorque;
-    public Photon.Deterministic.FP suspensionDistance;
-    public Photon.Deterministic.FP suspensionSpring;
-    public Photon.Deterministic.FP suspensionDamper;
 
     public sealed override Quantum.Prototypes.Wheel_Prototype Convert(EntityPrototypeConverter converter) {
       var result = new Quantum.Prototypes.Wheel_Prototype();
-      result.dummyLocalPosition = this.dummyLocalPosition;
       converter.Convert(this.wheel, out result.wheel);
-      result.dummy = this.dummy;
-      result.radius = this.radius;
-      result.mass = this.mass;
-      result.width = this.width;
       result.right = this.right;
-      result.motorTorque = this.motorTorque;
-      result.brakeTorque = this.brakeTorque;
-      result.suspensionDistance = this.suspensionDistance;
-      result.suspensionSpring = this.suspensionSpring;
-      result.suspensionDamper = this.suspensionDamper;
       return result;
     }
   }

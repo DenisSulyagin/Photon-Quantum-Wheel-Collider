@@ -92,11 +92,11 @@ MonoBehaviour:
           RawValue: 65536
       Position:
         X:
-          RawValue: -70582
+          RawValue: 64225
         Y:
-          RawValue: -199884
+          RawValue: -24248
         Z:
-          RawValue: 610926
+          RawValue: 743833
       PhysicsMaterial:
         Id:
           Value: 1
@@ -105,11 +105,11 @@ MonoBehaviour:
         RawValue: 0
       BoxExtents:
         X:
-          RawValue: 32768
+          RawValue: 163840
         Y:
           RawValue: 32768
         Z:
-          RawValue: 32768
+          RawValue: 140247
       SmoothSphereMeshCollisions: 0
       StaticData:
         Name: Cube
@@ -256,11 +256,11 @@ MonoBehaviour:
           RawValue: -62607
       Position:
         X:
-          RawValue: 59179
+          RawValue: 68157
         Y:
-          RawValue: -189988
+          RawValue: -122552
         Z:
-          RawValue: 368443
+          RawValue: 467927
       PhysicsMaterial:
         Id:
           Value: 1
@@ -269,11 +269,11 @@ MonoBehaviour:
         RawValue: 0
       BoxExtents:
         X:
-          RawValue: 32768
+          RawValue: 163840
         Y:
           RawValue: 32768
         Z:
-          RawValue: 32768
+          RawValue: 189071
       SmoothSphereMeshCollisions: 0
       StaticData:
         Name: Cube (4)
@@ -330,202 +330,83 @@ MonoBehaviour:
     MapEntities: []
   Prototypes:
   - PlayerVehicle:
-    - force:
-        RawValue: 6553600
-      distance:
-        RawValue: 6553600
-      position:
-        X:
-          RawValue: 0
-        Y:
-          RawValue: 0
-        Z:
-          RawValue: 0
-      steerAngle:
-        RawValue: 2621440
-      maxAngularVelocityWheels:
-        RawValue: 65536000
-      tridimensionalWheels:
-        Value: 1
-      chassis:
+    - chassis:
         SceneIndexPlusOne: 1
-      wheels:
-      - dummyLocalPosition:
-          X:
-            RawValue: -65536
-          Y:
-            RawValue: -32768
-          Z:
-            RawValue: 131072
-        wheel:
-          SceneIndexPlusOne: 2
-        dummy:
-          Position:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-          Rotation:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-            W:
-              RawValue: 0
-        radius:
+      maxAngularVelocityWheels:
+        RawValue: 131072000
+      tridimensionalWheels:
+        Value: 0
+      axles:
+      - width:
+          RawValue: 131072
+        horizontalPosition:
+          RawValue: 131072
+        verticalPosition:
+          RawValue: -32768
+        steerAngle:
+          RawValue: 2949120
+        wheelRadius:
           RawValue: 32768
-        mass:
+        wheelMass:
           RawValue: 6553
-        width:
+        wheelFriction:
+          RawValue: 65536
+        wheelWidth:
           RawValue: 32768
-        right:
-          Value: 0
         motorTorque:
-          RawValue: 1310720
+          RawValue: 3276800
         brakeTorque:
-          RawValue: 6553600
+          RawValue: 32768000
         suspensionDistance:
           RawValue: 65536
         suspensionSpring:
           RawValue: 655360
         suspensionDamper:
-          RawValue: 65536
-      - dummyLocalPosition:
-          X:
-            RawValue: 65536
-          Y:
-            RawValue: -32768
-          Z:
-            RawValue: 131072
-        wheel:
-          SceneIndexPlusOne: 3
-        dummy:
-          Position:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-          Rotation:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-            W:
-              RawValue: 0
-        radius:
           RawValue: 32768
-        mass:
+        wheels:
+        - wheel:
+            SceneIndexPlusOne: 2
+          right:
+            Value: 0
+        - wheel:
+            SceneIndexPlusOne: 3
+          right:
+            Value: 1
+      - width:
+          RawValue: 131072
+        horizontalPosition:
+          RawValue: -131072
+        verticalPosition:
+          RawValue: -32768
+        steerAngle:
+          RawValue: 0
+        wheelRadius:
+          RawValue: 32768
+        wheelMass:
           RawValue: 6553
-        width:
+        wheelFriction:
+          RawValue: 65536
+        wheelWidth:
           RawValue: 32768
-        right:
-          Value: 1
         motorTorque:
-          RawValue: 1310720
+          RawValue: 3276800
         brakeTorque:
-          RawValue: 6553600
+          RawValue: 32768000
         suspensionDistance:
           RawValue: 65536
         suspensionSpring:
           RawValue: 655360
         suspensionDamper:
-          RawValue: 65536
-      - dummyLocalPosition:
-          X:
-            RawValue: -65536
-          Y:
-            RawValue: -32768
-          Z:
-            RawValue: -131072
-        wheel:
-          SceneIndexPlusOne: 4
-        dummy:
-          Position:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-          Rotation:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-            W:
-              RawValue: 0
-        radius:
           RawValue: 32768
-        mass:
-          RawValue: 6553
-        width:
-          RawValue: 32768
-        right:
-          Value: 0
-        motorTorque:
-          RawValue: 1310720
-        brakeTorque:
-          RawValue: 6553600
-        suspensionDistance:
-          RawValue: 65536
-        suspensionSpring:
-          RawValue: 655360
-        suspensionDamper:
-          RawValue: 65536
-      - dummyLocalPosition:
-          X:
-            RawValue: 65536
-          Y:
-            RawValue: -32768
-          Z:
-            RawValue: -131072
-        wheel:
-          SceneIndexPlusOne: 5
-        dummy:
-          Position:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-          Rotation:
-            X:
-              RawValue: 0
-            Y:
-              RawValue: 0
-            Z:
-              RawValue: 0
-            W:
-              RawValue: 0
-        radius:
-          RawValue: 32768
-        mass:
-          RawValue: 6553
-        width:
-          RawValue: 32768
-        right:
-          Value: 1
-        motorTorque:
-          RawValue: 1310720
-        brakeTorque:
-          RawValue: 6553600
-        suspensionDistance:
-          RawValue: 65536
-        suspensionSpring:
-          RawValue: 655360
-        suspensionDamper:
-          RawValue: 65536
+        wheels:
+        - wheel:
+            SceneIndexPlusOne: 4
+          right:
+            Value: 0
+        - wheel:
+            SceneIndexPlusOne: 5
+          right:
+            Value: 1
     CharacterController2D: []
     CharacterController3D: []
     NavMeshAvoidanceAgent: []
@@ -540,7 +421,7 @@ MonoBehaviour:
       Mass:
         RawValue: 65536
       Drag:
-        RawValue: 32768
+        RawValue: 0
       AngularDrag:
         RawValue: 32768
       CenterOfMass:
@@ -566,16 +447,16 @@ MonoBehaviour:
           X:
             RawValue: 0
           Y:
-            RawValue: 0
+            RawValue: -32768
           Z:
             RawValue: 0
         BoxExtents:
           X:
-            RawValue: 55705
-          Y:
-            RawValue: 16384
-          Z:
             RawValue: 65536
+          Y:
+            RawValue: 32768
+          Z:
+            RawValue: 98304
         RotationOffset:
           X:
             RawValue: 0
@@ -603,9 +484,9 @@ MonoBehaviour:
         X:
           RawValue: 0
         Y:
-          RawValue: 39976
+          RawValue: 53084
         Z:
-          RawValue: 367656
+          RawValue: -182190
       Rotation:
         X:
           RawValue: 0
@@ -638,7 +519,7 @@ MonoBehaviour:
         Y:
           RawValue: -13107
         Z:
-          RawValue: 420085
+          RawValue: 5898
       Rotation:
         X:
           RawValue: 0
@@ -671,7 +552,7 @@ MonoBehaviour:
         Y:
           RawValue: -13107
         Z:
-          RawValue: 420085
+          RawValue: 5898
       Rotation:
         X:
           RawValue: 0
@@ -704,7 +585,7 @@ MonoBehaviour:
         Y:
           RawValue: -13107
         Z:
-          RawValue: 315228
+          RawValue: -98959
       Rotation:
         X:
           RawValue: 0
@@ -737,7 +618,7 @@ MonoBehaviour:
         Y:
           RawValue: -13107
         Z:
-          RawValue: 315228
+          RawValue: -98959
       Rotation:
         X:
           RawValue: 0
