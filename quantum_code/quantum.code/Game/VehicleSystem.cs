@@ -4,9 +4,18 @@ namespace Quantum.Game;
 
 public unsafe class VehicleSystem : SystemMainThread
 {
+    FP throttle;
+    FP brake;
+    bool reverseGear;
+
+    FPVector3 vehiclePositionPrev;
+    FP vehicleSpeed;
+
     public override void Update(Frame f)
     {
         var input = f.GetPlayerInput(0);
+
+        UpdateInput();
 
         var vehicles = f.Unsafe.GetComponentBlockIterator<PlayerVehicle>();
 
@@ -27,6 +36,16 @@ public unsafe class VehicleSystem : SystemMainThread
                 chassisTransform->Rotation = FPQuaternion.Euler(new FPVector3(euler.X, euler.Y, 0));
             }
 
+            vehicleSpeed = FPVector3.Dot(chassisTransform->Position - vehiclePositionPrev, chassisTransform->Forward) / f.DeltaTime;
+            vehiclePositionPrev = chassisTransform->Position;
+
+            if (FPMath.Abs(vehicleSpeed) <= vehicle.Component->reverseGearSpeedTreshold)
+                if (input->brake)
+                    reverseGear = true;
+                else if (input->throttle)
+                    reverseGear = false;
+
+            //Wheels
             for (int i = 0; i < axles.Length; i++)
             {
                 var axle = axles[i];
@@ -38,11 +57,11 @@ public unsafe class VehicleSystem : SystemMainThread
 
                     wheel->dummyLocalPosition = new FPVector3(axle.width * FP._0_50 * right, axle.verticalPosition, axle.horizontalPosition);
 
-                    WheelUpdate(axle, wheel);
+                    UpdateWheelSystem(axle, wheel);
                 }
             }
 
-            void WheelUpdate(Axle axle, Wheel* wheel)
+            void UpdateWheelSystem(Axle axle, Wheel* wheel)
             {
                 var wheelTransform = f.Unsafe.GetPointer<Transform3D>(wheel->wheel);
 
@@ -147,8 +166,8 @@ public unsafe class VehicleSystem : SystemMainThread
                 wheelTransform->Rotation = wheel->dummy.Rotation * FPQuaternion.Euler(FPVector3.Right * wheel->rotationAngle);
                 wheelTransform->Position = wheel->dummy.Position - wheel->dummy.Up * (axle.suspensionDistance - wheel->suspensionCompression);
 
-                var torque = axle.motorTorque * input->throttle;
-                var brakeTorque = axle.brakeTorque * input->brake;
+                var torque = axle.motorTorque * throttle;
+                var brakeTorque = axle.brakeTorque * brake;
 
                 //Friction Torque
                 angularVelocity -= ForwardFriction(wheel, wheel->forwardSlip) / (FP.Pi * 2 * axle.wheelRadius) / axle.wheelMass;
@@ -227,6 +246,40 @@ public unsafe class VehicleSystem : SystemMainThread
             {
                 return FPMath.Atan(slip) * FP._0_50 * wheel->forceUp;
             }
+        }
+
+        void UpdateInput()
+        {
+            if (reverseGear)
+            {
+                if (input->throttle)
+                    brake += f.DeltaTime;
+                else
+                    brake = 0;
+
+                if (input->brake)
+                    throttle -= f.DeltaTime;
+                else
+                    throttle = 0;
+
+                throttle = FPMath.Max(throttle, -1);
+            }
+            else
+            {
+                if (input->throttle)
+                    throttle += f.DeltaTime;
+                else
+                    throttle = 0;
+
+                if (input->brake)
+                    brake += f.DeltaTime;
+                else
+                    brake = 0;
+
+                throttle = FPMath.Min(throttle, 1);
+            }
+
+            brake = FPMath.Clamp01(brake);
         }
     }
 }

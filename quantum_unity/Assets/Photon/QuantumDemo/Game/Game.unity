@@ -534,6 +534,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d80a0dde3922e0f47b2e12ce66a4cfdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throttleKey: 273
+  brakeKey: 274
+  resetKey: 114
 --- !u!1 &285016796
 GameObject:
   m_ObjectHideFlags: 0
@@ -5387,6 +5390,8 @@ MonoBehaviour:
     chassis: {fileID: 2090441708}
     maxAngularVelocityWheels:
       RawValue: 131072000
+    reverseGearSpeedTreshold:
+      RawValue: 65536
     tridimensionalWheels:
       Value: 0
     axles:
@@ -5401,15 +5406,15 @@ MonoBehaviour:
       wheelRadius:
         RawValue: 32768
       wheelMass:
-        RawValue: 6553
+        RawValue: 655
       wheelFriction:
-        RawValue: 65536
+        RawValue: 131072
       wheelWidth:
         RawValue: 32768
       motorTorque:
         RawValue: 3276800
       brakeTorque:
-        RawValue: 32768000
+        RawValue: 6553600
       suspensionDistance:
         RawValue: 65536
       suspensionSpring:
@@ -5434,15 +5439,15 @@ MonoBehaviour:
       wheelRadius:
         RawValue: 32768
       wheelMass:
-        RawValue: 6553
+        RawValue: 655
       wheelFriction:
-        RawValue: 65536
+        RawValue: 131072
       wheelWidth:
         RawValue: 32768
       motorTorque:
         RawValue: 3276800
       brakeTorque:
-        RawValue: 32768000
+        RawValue: 6553600
       suspensionDistance:
         RawValue: 65536
       suspensionSpring:

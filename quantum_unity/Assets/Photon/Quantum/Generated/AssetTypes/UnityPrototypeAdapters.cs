@@ -11,6 +11,7 @@ namespace Quantum.Prototypes.Unity {
     [Quantum.LocalReference]
     public global::EntityPrototype chassis;
     public Photon.Deterministic.FP maxAngularVelocityWheels;
+    public Photon.Deterministic.FP reverseGearSpeedTreshold;
     public Quantum.QBoolean tridimensionalWheels;
     [Quantum.Inspector.ArrayLengthAttribute((Int32)2)]
     public Axle_Prototype[] axles = new Axle_Prototype[2];
@@ -19,6 +20,7 @@ namespace Quantum.Prototypes.Unity {
       var result = new Quantum.Prototypes.PlayerVehicle_Prototype();
       converter.Convert(this.chassis, out result.chassis);
       result.maxAngularVelocityWheels = this.maxAngularVelocityWheels;
+      result.reverseGearSpeedTreshold = this.reverseGearSpeedTreshold;
       result.tridimensionalWheels = this.tridimensionalWheels;
       result.axles = System.Array.ConvertAll(this.axles, x => x.Convert(converter));
       return result;

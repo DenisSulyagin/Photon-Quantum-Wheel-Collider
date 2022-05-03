@@ -52,6 +52,9 @@ component PlayerVehicle
   EntityRef chassis;
   
   FP maxAngularVelocityWheels;
+
+  FP reverseGearSpeedTreshold;
+
   bool tridimensionalWheels;
 
   array<Axle>[2] axles;
@@ -82,8 +85,8 @@ struct Axle
 
 ﻿input
 {
-    FP throttle;
-    FP brake;
+    bool throttle;
+    bool brake;
     FP steer;
     bool reset;
 }

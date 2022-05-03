@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class LocalInput : MonoBehaviour
 {
+    public KeyCode throttleKey;
+    public KeyCode brakeKey;
+    public KeyCode resetKey;
+
     private void OnEnable()
     {
         QuantumCallback.Subscribe(this, (CallbackPollInput callback) => PollInput(callback));
@@ -12,15 +16,12 @@ public class LocalInput : MonoBehaviour
 
     public void PollInput(CallbackPollInput callback)
     {
-        var x = UnityEngine.Input.GetAxis("Horizontal");
-        var y = UnityEngine.Input.GetAxis("Vertical");
-
         var i = new Quantum.Input()
         {
-            throttle = Mathf.Clamp01(y).ToFP(),
-            brake = Mathf.Clamp01(-y).ToFP(),
-            steer = x.ToFP(),
-            reset = UnityEngine.Input.GetKeyDown(KeyCode.R)
+            throttle = UnityEngine.Input.GetKey(throttleKey),
+            brake = UnityEngine.Input.GetKey(brakeKey),
+            steer = UnityEngine.Input.GetAxis("Horizontal").ToFP(),
+            reset = UnityEngine.Input.GetKeyDown(resetKey)
         };
 
         callback.SetInput(i, DeterministicInputFlags.Repeatable);

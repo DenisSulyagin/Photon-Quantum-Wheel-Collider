@@ -334,6 +334,8 @@ MonoBehaviour:
         SceneIndexPlusOne: 1
       maxAngularVelocityWheels:
         RawValue: 131072000
+      reverseGearSpeedTreshold:
+        RawValue: 65536
       tridimensionalWheels:
         Value: 0
       axles:
@@ -348,15 +350,15 @@ MonoBehaviour:
         wheelRadius:
           RawValue: 32768
         wheelMass:
-          RawValue: 6553
+          RawValue: 655
         wheelFriction:
-          RawValue: 65536
+          RawValue: 131072
         wheelWidth:
           RawValue: 32768
         motorTorque:
           RawValue: 3276800
         brakeTorque:
-          RawValue: 32768000
+          RawValue: 6553600
         suspensionDistance:
           RawValue: 65536
         suspensionSpring:
@@ -383,15 +385,15 @@ MonoBehaviour:
         wheelRadius:
           RawValue: 32768
         wheelMass:
-          RawValue: 6553
+          RawValue: 655
         wheelFriction:
-          RawValue: 65536
+          RawValue: 131072
         wheelWidth:
           RawValue: 32768
         motorTorque:
           RawValue: 3276800
         brakeTorque:
-          RawValue: 32768000
+          RawValue: 6553600
         suspensionDistance:
           RawValue: 65536
         suspensionSpring:
