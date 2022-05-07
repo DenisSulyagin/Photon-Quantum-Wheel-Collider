@@ -32,6 +32,7 @@ namespace Quantum.Prototypes.Unity {
     public Photon.Deterministic.FP width;
     public Photon.Deterministic.FP horizontalPosition;
     public Photon.Deterministic.FP verticalPosition;
+    public Quantum.QBoolean rear;
     public Photon.Deterministic.FP steerAngle;
     public Photon.Deterministic.FP wheelRadius;
     public Photon.Deterministic.FP wheelMass;
@@ -50,6 +51,7 @@ namespace Quantum.Prototypes.Unity {
       result.width = this.width;
       result.horizontalPosition = this.horizontalPosition;
       result.verticalPosition = this.verticalPosition;
+      result.rear = this.rear;
       result.steerAngle = this.steerAngle;
       result.wheelRadius = this.wheelRadius;
       result.wheelMass = this.wheelMass;
@@ -70,11 +72,13 @@ namespace Quantum.Prototypes.Unity {
     [Quantum.LocalReference]
     public global::EntityPrototype wheel;
     public Quantum.QBoolean right;
+    public Quantum.LayerMask layerMask;
 
     public sealed override Quantum.Prototypes.Wheel_Prototype Convert(EntityPrototypeConverter converter) {
       var result = new Quantum.Prototypes.Wheel_Prototype();
       converter.Convert(this.wheel, out result.wheel);
       result.right = this.right;
+      result.layerMask = this.layerMask;
       return result;
     }
   }

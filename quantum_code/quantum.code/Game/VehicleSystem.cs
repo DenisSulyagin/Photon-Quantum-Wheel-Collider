@@ -11,6 +11,9 @@ public unsafe class VehicleSystem : SystemMainThread
     FPVector3 vehiclePositionPrev;
     FP vehicleSpeed;
 
+    FP COLLISION_FACTOR = 50;
+    FP COLLISION_DAMPER = 10;
+
     public override void Update(Frame f)
     {
         var input = f.GetPlayerInput(0);
@@ -72,6 +75,8 @@ public unsafe class VehicleSystem : SystemMainThread
 
                 UpdateSuspension(axle, wheel);
 
+                UpdateCollision(axle, wheel, wheelTransform);
+
                 UpdateWheel(axle, wheel, wheelTransform);
 
                 if (wheel->isGrounded)
@@ -79,7 +84,38 @@ public unsafe class VehicleSystem : SystemMainThread
                     CalculateSlips(axle, wheel);
                     CalculateForcesFromSlips(axle, wheel);
 
-                    chassisBody->AddForceAtPosition(wheel->totalForce, wheelTransform->Position, chassisTransform);
+                    chassisBody->AddForceAtPosition(wheel->totalForce + wheel->totalForceCollision, wheelTransform->Position, chassisTransform);
+                }
+            }
+
+            void UpdateCollision(Axle axle, Wheel* wheel, Transform3D* wheelTransform)
+            {
+                var direction = axle.rear ? wheel->dummy.Back : wheel->dummy.Forward;
+                var hitRForward = f.Physics3D.Raycast(
+                    wheelTransform->Position,
+                    direction,
+                    axle.wheelRadius,
+                    wheel->layerMask,
+                    QueryOptions.ComputeDetailedInfo | QueryOptions.HitAll
+                    );
+
+                if (hitRForward.HasValue)
+                {
+                    wheel->horizontalCompressionPrev = wheel->horizontalCompression;
+
+                    wheel->horizontalCompression = (1 - hitRForward.Value.CastDistanceNormalized) * axle.wheelRadius;
+
+                    wheel->totalForceCollision = -direction * wheel->horizontalCompression * chassisBody->Mass * COLLISION_FACTOR;
+                    wheel->totalForceCollision -= direction * (wheel->horizontalCompression - wheel->horizontalCompressionPrev) / f.DeltaTime * chassisBody->Mass * COLLISION_DAMPER;
+
+                    Draw.Ray(wheelTransform->Position, direction * axle.wheelRadius);
+                }
+                else
+                {
+                    wheel->horizontalCompression = 0;
+
+                    wheel->totalForceCollision = FPVector3.Zero;
+                    Draw.Ray(wheelTransform->Position, direction * axle.wheelRadius, ColorRGBA.Red);
                 }
             }
 
@@ -89,7 +125,7 @@ public unsafe class VehicleSystem : SystemMainThread
                     wheel->dummy.Position,
                     -wheel->dummy.Up,
                     axle.wheelRadius + axle.suspensionDistance,
-                    -1,
+                    wheel->layerMask,
                     QueryOptions.ComputeDetailedInfo | QueryOptions.HitAll
                     );
 
@@ -170,7 +206,8 @@ public unsafe class VehicleSystem : SystemMainThread
                 var brakeTorque = axle.brakeTorque * brake;
 
                 //Friction Torque
-                angularVelocity -= ForwardFriction(wheel, wheel->forwardSlip) / (FP.Pi * 2 * axle.wheelRadius) / axle.wheelMass;
+                wheel->torque = ForwardFriction(wheel, wheel->forwardSlip) / (FP.Pi * 2 * axle.wheelRadius) / axle.wheelMass;
+                angularVelocity -= wheel->torque;
 
                 //Input Torque
                 angularVelocity += torque / axle.wheelRadius / axle.wheelMass * f.DeltaTime;
@@ -183,7 +220,6 @@ public unsafe class VehicleSystem : SystemMainThread
                 angularVelocity = FPMath.Clamp(angularVelocity, -maxAngularVelocityWheels, maxAngularVelocityWheels);
 
                 wheel->angularVelocity = angularVelocity;// caching to next frame
-
 
                 Draw.Ray(wheel->dummy.Position, wheel->dummy.Right, ColorRGBA.Red);
                 Draw.Ray(wheel->dummy.Position, wheel->dummy.Forward, ColorRGBA.Blue);
@@ -208,10 +244,10 @@ public unsafe class VehicleSystem : SystemMainThread
             {
                 var sin = FPVector3.Dot(wheel->dummy.Right, wheel->normal);
                 var right = wheel->dummy.Right - wheel->normal * sin;
-                var forward = FPVector3.Cross(right, wheel->normal);
+                wheel->forward = FPVector3.Cross(right, wheel->normal);
 
                 //Forward slip force
-                var forceForward = forward * ForwardFriction(wheel, wheel->forwardSlip);
+                var forceForward = wheel->forward * ForwardFriction(wheel, wheel->forwardSlip);
                 wheel->totalForce = forceForward;
 
                 //Lateral slip force

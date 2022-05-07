@@ -4,6 +4,8 @@
 
     bool right;
 
+    LayerMask layerMask;
+
     [ExcludeFromPrototype]
     Transform3D dummy;
 
@@ -45,6 +47,22 @@
 
     [ExcludeFromPrototype]
     FPVector3 normal;
+
+    [ExcludeFromPrototype]
+    FPVector3 forward;
+
+    [ExcludeFromPrototype]
+    FP torque;
+
+    
+    [ExcludeFromPrototype]
+    FPVector3 totalForceCollision;
+
+    [ExcludeFromPrototype]
+    FP horizontalCompression;
+
+    [ExcludeFromPrototype]
+    FP horizontalCompressionPrev;
 }
 
 component PlayerVehicle
@@ -65,6 +83,8 @@ struct Axle
     FP width;
     FP horizontalPosition;
     FP verticalPosition;
+
+    bool rear;
 
     FP steerAngle;
 

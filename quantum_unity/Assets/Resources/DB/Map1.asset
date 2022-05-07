@@ -53,7 +53,7 @@ MonoBehaviour:
         X:
           RawValue: 0
         Y:
-          RawValue: -211025
+          RawValue: -196608
         Z:
           RawValue: 0
       PhysicsMaterial:
@@ -174,11 +174,11 @@ MonoBehaviour:
           RawValue: 65536
       Position:
         X:
-          RawValue: -261947
+          RawValue: -3244032
         Y:
-          RawValue: -199884
+          RawValue: -32768
         Z:
-          RawValue: 530317
+          RawValue: -65536
       PhysicsMaterial:
         Id:
           Value: 1
@@ -189,9 +189,9 @@ MonoBehaviour:
         X:
           RawValue: 32768
         Y:
-          RawValue: 32768
+          RawValue: 131072
         Z:
-          RawValue: 32768
+          RawValue: 3276800
       SmoothSphereMeshCollisions: 0
       StaticData:
         Name: Cube (2)
@@ -345,6 +345,8 @@ MonoBehaviour:
           RawValue: 131072
         verticalPosition:
           RawValue: -32768
+        rear:
+          Value: 0
         steerAngle:
           RawValue: 2949120
         wheelRadius:
@@ -370,16 +372,22 @@ MonoBehaviour:
             SceneIndexPlusOne: 2
           right:
             Value: 0
+          layerMask:
+            BitMask: 1
         - wheel:
             SceneIndexPlusOne: 3
           right:
             Value: 1
+          layerMask:
+            BitMask: 1
       - width:
           RawValue: 131072
         horizontalPosition:
           RawValue: -131072
         verticalPosition:
           RawValue: -32768
+        rear:
+          Value: 0
         steerAngle:
           RawValue: 0
         wheelRadius:
@@ -405,10 +413,14 @@ MonoBehaviour:
             SceneIndexPlusOne: 4
           right:
             Value: 0
+          layerMask:
+            BitMask: 1
         - wheel:
             SceneIndexPlusOne: 5
           right:
             Value: 1
+          layerMask:
+            BitMask: 1
     CharacterController2D: []
     CharacterController3D: []
     NavMeshAvoidanceAgent: []
@@ -458,7 +470,7 @@ MonoBehaviour:
           Y:
             RawValue: 32768
           Z:
-            RawValue: 98304
+            RawValue: 131072
         RotationOffset:
           X:
             RawValue: 0
@@ -470,7 +482,7 @@ MonoBehaviour:
         IsPersistent: 1
         CompoundShapes: []
         IsSetFromSourceCollider: 0
-      Layer: 0
+      Layer: 6
       IsTrigger: 0
       PhysicsMaterial:
         Id:
